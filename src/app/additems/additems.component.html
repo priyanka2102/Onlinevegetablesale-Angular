@@ -1,0 +1,33 @@
+<body>
+    <div class="bg">
+<header>  
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+        <ul class="navbar-nav">
+          <li><a class="nav-item nav-link" routerLink="/products">Items</a></li>
+      </ul>
+
+        </nav>
+</header>
+        <div class="container">
+            <div class="jumbotron">
+                <h2 class="textual">Enter Item</h2>
+                 <form #itemsform="ngForm" (ngSubmit)="registerVeggies()">
+                    <!-- {{registerform.form.valid}} -->
+                    <small class="text-danger">{{message}}</small>
+                    <div class="form-group">
+                      <label for="name">Name:</label>
+                      <input type="name" class="form-control" placeholder="Enter Item Name" name="name" [(ngModel)]="p.name" required>   
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Price</label>
+                    <input type="price" class="form-control" placeholder="Enter Price" name="price" [(ngModel)]="p.price" required >
+                  </div>
+                  <button [disabled]="itemsform.form.invalid" type="submit" class="btn btn-success">ADD</button>
+                </form>
+                </div>
+              </div>
+      </div>
+      </body>  

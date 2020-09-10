@@ -1,0 +1,47 @@
+<header>
+      
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/cart">CART</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/listfeedback">Feedback</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li><a *ngIf="isLoggedIn" class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li> -->
+            <li><a class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li>
+        </ul>
+    </nav>
+
+</header>
+<div>
+Welcome 
+{{username}}
+<div>
+    <h1>List Of Vegetables</h1>
+     <div ><!--(ngSubmit)="showCustomers()"> -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>ADD ITEM</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of prod">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td><button (click)="addtocart(p.id)" class="btn btn-warning">ADD TO CART</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>

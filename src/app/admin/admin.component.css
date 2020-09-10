@@ -1,0 +1,21 @@
+body{
+    height: 100%;
+  }
+  
+.bg{
+    background-image: url("src/assets/images/veg-3.jpg");
+
+  /* Full height */
+  /* height: 100%; */
+
+  /* Center and scale the image nicely */
+  /* background-position: center;
+  background-repeat: no-repeat; */
+  background-size: cover;
+}
+.jumbotron{
+  background: rgba(0,0,0,0.00001)
+}
+.container{
+  background: rgba(0,0,0,0.00001)
+}

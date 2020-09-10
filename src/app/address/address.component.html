@@ -1,0 +1,56 @@
+<body>
+    <div class="bg">
+    <header>  
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+        </nav>
+        </header>
+        
+  <div class="container">
+  <div class="jumbotron">
+      <h2 class="textual">Shipping Details</h2>
+      <form #registerform="ngForm" (ngSubmit)="addAddress()">
+          <!-- {{registerform.form.valid}} -->
+          <small class="text-danger">{{message}}</small>
+          <div class="form-group">
+            <label for="houseNo">Address</label>
+            <input type="name" class="form-control" placeholder="address" name="houseNo" [(ngModel)]="a.houseNo" required #houseNo=ngModel
+             [class.is-invalid]="houseNo.invalid && houseNo.touched">
+             <small class="text-danger" [class.d-none]="houseNo.valid || houseNo.untouched">Address is required</small>
+             
+        </div>
+    <div class="form-group">
+        <label for="locality">Locality</label>
+        <input type="name" class="form-control" placeholder="Locality" name="locality" [(ngModel)]="a.locality" required #locality=ngModel
+         [class.is-invalid]="locality.invalid && locality.touched">
+         <small class="text-danger" [class.d-none]="locality.valid || locality.untouched">Locality is required</small>
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="name" class="form-control" placeholder="City" name="city" [(ngModel)]="a.city" required #city=ngModel
+         [class.is-invalid]="city.invalid && city.touched">
+         <small class="text-danger" [class.d-none]="city.valid || city.untouched">City is required</small>
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <input type="name" class="form-control" placeholder="State" name="state" [(ngModel)]="a.state" required #state=ngModel
+         [class.is-invalid]="state.invalid && state.touched">
+         <small class="text-danger" [class.d-none]="state.valid || state.untouched">City is required</small>
+    </div>
+    <div class="form-group">
+        <label for="pinCode">Pincode</label>
+        <input type="name" class="form-control" placeholder="Pincode" name="pinCode" [(ngModel)]="a.pinCode" required #pinCode=ngModel
+         [class.is-invalid]="pinCode.invalid && pinCode.touched">
+         <small class="text-danger" [class.d-none]="pinCode.valid || pinCode.untouched">Pincode is required</small>
+    </div>
+      
+      
+        <button [disabled]="registerform.form.invalid" type="submit" class="btn btn-success">Add Address</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  </body>
+  

@@ -1,0 +1,45 @@
+<header>
+      
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+         <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/adminwelcome">HOME</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/additems">Add Items</a></li>
+        </ul>
+
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li><a *ngIf="isLoggedIn" class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li> -->
+            <li><a class="nav-item nav-link" routerLink="/adminlogout" >LOGOUT</a></li>
+        </ul>
+    </nav>
+
+</header>
+<div>
+    <h1>List Of Vegetables</h1>
+     <div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of productss">
+                <td>{{p.id}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td><button (click)="viewVeggies(p.id)" class="btn btn-warning">VIEW</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <app-viewbook *ngIf="action === 'view'" [productss]="selectedprod" (productDeletedEvent)="refreshItems()"></app-viewbook>
+    </div>

@@ -1,0 +1,45 @@
+<header>
+      
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/adminwelcome">HOME</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/products">Items</a></li>
+        </ul> 
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/additems">Add Items</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li><a *ngIf="isLoggedIn" class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li> -->
+            <li><a class="nav-item nav-link" routerLink="/adminlogout" >LOGOUT</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div>
+    <h1>List Of Customers</h1>
+     <div ><!--(ngSubmit)="showCustomers()"> -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Comment</th>
+            <th>Rating</th>
+            <th>Customer Id</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let f of feedback">
+                <td>{{f.id}}</td>
+                <td>{{f.comment}}</td>
+                <td>{{f.rating}}</td>
+                <td>{{f.customer_id}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>

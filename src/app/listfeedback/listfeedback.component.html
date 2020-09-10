@@ -1,0 +1,42 @@
+<!-- <div style="min-width: 100%;min-height: 200%;background-image: url('..//assets/wood.jpg');"> -->
+  <header>
+      
+    <nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(106, 80, 255)">
+        <div>
+            <h1 class="navbar-brand">Your Vegetable Market</h1>
+        </div>  
+        <ul class="navbar-nav">
+            <li><a class="nav-item nav-link" routerLink="/welcome">Home</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-collapse justify-content-end">
+            <!-- <li><a *ngIf="isLoggedIn" class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li> -->
+            <li><a class="nav-item nav-link" routerLink="/logout" >LOGOUT</a></li>
+        </ul>
+    </nav>
+
+</header>
+    <br><br><br><br><br><br>
+    <div class="container" style="max-width: 600px;background-color:whitesmoke;">
+        <h2>User Feedback</h2>
+        <form #Feedbackform="ngForm" (ngSubmit)="userFeedback()">
+          <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" type="text" name="comment" rows="5" id="comment" #comment="ngModel" [(ngModel)]="feedback.comment"></textarea>
+          </div>
+          <div>
+            <h1>  
+              {{title}}   
+            </h1>  
+            <br>  
+            <a *ngFor="let item of starList; let i=index " (click)="setStar(i)">  
+              <i class="fa" [ngClass]="{'fa-star-o':item,'fa-star':!item}"></i>   
+             </a>  
+            <br>  
+            Rating :- {{rating}} stars
+          </div>
+          <button type="submit" class="btn btn-primary" >Submit</button>
+        </form>
+      </div>
+      <br><br><br><br><br><br><br>
+    <!-- </div> -->
+      
